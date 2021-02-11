@@ -8,10 +8,18 @@
     "fix:format": "prettier --write \"**/*.{js,jsx,ts,tsx,html,vue,css,less,scss,graphql,yaml,yml,json,md,mdx}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": "./index.js",
   "keywords": [],
   "author": "Graham McGregor",
   "license": "MIT",
+  "dependencies": {
+    "@babel/code-frame": "^7.12.13",
+    "chalk": "^4.1.0",
+    "get-stdin": "^8.0.0",
+    "json-source-map": "^0.6.1"
+  },
   "devDependencies": {
+    "@types/node": "^12.19.16",
     "prettier": "^2.2.1"
   }
 }
