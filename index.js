@@ -2,6 +2,15 @@
 //@ts-check
 "use strict";
 
+process.on(
+  "unhandledRejection",
+  /** @param {Error} error */
+  (error) => {
+    errorLog(error.message);
+    process.exit(1);
+  },
+);
+
 const { codeFrameColumns } = require("@babel/code-frame");
 const chalk = require("chalk");
 const fs = require("fs/promises");
