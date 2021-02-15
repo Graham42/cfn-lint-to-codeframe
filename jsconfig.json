@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonJS",
+    "moduleResolution": "node",
+    "checkJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "strict": true
+  }
+}

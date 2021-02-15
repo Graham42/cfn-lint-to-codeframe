@@ -13,7 +13,7 @@ process.on(
 
 const { codeFrameColumns } = require("@babel/code-frame");
 const chalk = require("chalk");
-const fs = require("fs/promises");
+const fs = require("fs").promises;
 const getStdin = require("get-stdin");
 const parse = require("./errorformat");
 const { getJsonPathFromRawLocation } = require("./json-helper");

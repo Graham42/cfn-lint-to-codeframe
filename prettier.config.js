@@ -1,9 +1,5 @@
 // This file and the npm scripts 'fix:format' and 'lint:format' were generated
 // with 'npx @graham42/prettier-config'
-
-/**
- * @type { import("prettier").Options }
- */
 module.exports = {
   /*
    * Requiring trailing commas makes git history work better. If you have an
