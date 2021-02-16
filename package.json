@@ -1,6 +1,6 @@
 {
   "name": "cfn-lint-to-codeframe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": "index.js",
-  "keywords": ["AWS", "CloudFormation", "linter"],
+  "keywords": [
+    "AWS",
+    "CloudFormation",
+    "linter"
+  ],
   "author": "Graham McGregor",
   "license": "MIT",
   "dependencies": {
