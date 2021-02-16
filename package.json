@@ -16,6 +16,10 @@
   ],
   "author": "Graham McGregor",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Graham42/cfn-lint-to-codeframe.git"
+  },
   "dependencies": {
     "@babel/code-frame": "^7.12.13",
     "chalk": "^4.1.0",
