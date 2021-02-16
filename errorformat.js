@@ -21,6 +21,9 @@ function parse(line) {
   // Future: Accept new error format strings
   // lint-me.json:218:7:218:34:E3001:Invalid resource attribute foo for resource bar
   let parts = line.split(":");
+  if (parts.length < 6) {
+    throw new Error(`Line is not in expected parseable format: '${line}'`);
+  }
   /** @type {ErrorFormat} */
   let err = {
     fileName: parts[0],

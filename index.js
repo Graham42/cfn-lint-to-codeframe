@@ -25,7 +25,36 @@ async function main() {
   let errors = errorsRaw
     .split(/\r?\n/)
     .filter((s) => !!s.trim())
-    .map((line) => parse(line));
+    .reduce(
+      /**
+       * @param {import("./errorformat").ErrorFormat[]} result
+       * @param {string} line
+       */
+      (result, line) => {
+        /** @type {import("./errorformat").ErrorFormat | null} */
+        let err = null;
+        try {
+          err = parse(line);
+        } catch (err) {
+          if (process.env.DEBUG) {
+            errorLog(
+              `Caught ${err}, assuming that the line should be part of the previous error message`,
+            );
+          }
+          // if there's no previous error then this seems like a real error
+          if (result.length < 1) {
+            errorLog(`Error parsing line: ${line}`);
+          }
+        }
+        if (err) {
+          result.push(err);
+        } else {
+          result[result.length - 1].message += "\n" + line;
+        }
+        return result;
+      },
+      [],
+    );
 
   errors.forEach(async (err) => {
     let contents = await fs.readFile(err.fileName, "utf8");
