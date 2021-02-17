@@ -20,10 +20,13 @@
 function parse(line) {
   // Future: Accept new error format strings
   // lint-me.json:218:7:218:34:E3001:Invalid resource attribute foo for resource bar
-  let parts = line.split(":");
-  if (parts.length < 6) {
+  // Check for a file name then a colon, then 4 sets of numbers separated by
+  // colons. We could be more strict with the pattern but this should be good
+  // enough.
+  if (!/^[^:]+:(\d+:){4}/.test(line)) {
     throw new Error(`Line is not in expected parseable format: '${line}'`);
   }
+  let parts = line.split(":");
   /** @type {ErrorFormat} */
   let err = {
     fileName: parts[0],
