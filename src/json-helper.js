@@ -17,7 +17,13 @@ const jsonSourceMap = require("json-source-map");
  * @returns {string|null}
  */
 function getJsonPathFromRawLocation(rawJson, location) {
-  let { pointers } = jsonSourceMap.parse(rawJson);
+  let parsed = { pointers: {} };
+  try {
+    parsed = jsonSourceMap.parse(rawJson);
+  } catch (err) {
+    return null;
+  }
+  let { pointers } = parsed;
   let pathEntry = Object.entries(pointers).find(
     /** @param {[string, Pointer]} e */
     ([path, pointer]) => {
