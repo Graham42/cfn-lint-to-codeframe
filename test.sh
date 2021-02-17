@@ -10,7 +10,7 @@
 
 template="$1"
 input=$(cfn-lint -t "${template}" -f parseable)
-echo "$input" | ./index.js >/dev/null
+echo "$input" | ./src/index.js >/dev/null
 if [ $? -ne 0 ]; then
   echo "Error with $template"
 fi
