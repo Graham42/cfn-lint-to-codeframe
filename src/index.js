@@ -48,7 +48,7 @@ async function main() {
         }
         if (err) {
           result.push(err);
-        } else {
+        } else if (result.length > 0) {
           result[result.length - 1].message += "\n" + line;
         }
         return result;
