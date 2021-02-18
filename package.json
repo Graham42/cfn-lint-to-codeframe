@@ -1,6 +1,6 @@
 {
   "name": "cfn-lint-to-codeframe",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "scripts": {
     "lint:format": "prettier --check \"**/*.{js,jsx,ts,tsx,html,vue,css,less,scss,graphql,yaml,yml,json,md,mdx}\"",
