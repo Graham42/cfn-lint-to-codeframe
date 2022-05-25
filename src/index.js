@@ -36,11 +36,6 @@ async function main() {
         try {
           err = parse(line);
         } catch (err) {
-          if (process.env.DEBUG) {
-            errorLog(
-              `Caught ${err}, assuming that the line should be part of the previous error message`,
-            );
-          }
           // if there's no previous error then this seems like a real error
           if (result.length < 1) {
             errorLog(`Error parsing line: ${line}`);

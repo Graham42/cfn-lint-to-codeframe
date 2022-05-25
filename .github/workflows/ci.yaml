@@ -18,3 +18,13 @@ jobs:
       - name: Check Format
         run: |
           npm run check:format
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          npm ci
+      - name: Test
+        run: |
+          npm run test
