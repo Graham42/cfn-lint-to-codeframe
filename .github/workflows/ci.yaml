@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
+      - name: Prep container
+        run: |
+          npm run build:test-container
       - name: Test
         run: |
           npm run test
