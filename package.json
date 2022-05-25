@@ -7,8 +7,8 @@
     "check:format": "npm run prettier -- --check",
     "fix:format": "npm run prettier -- --write",
     "build:test-container": "docker build --progress=plain -f ./test/test.Dockerfile -t test-container .",
-    "test": "npm run build:test-container && docker run --rm -it -v $(pwd):/work -w /work test-container ./test/test.sh",
-    "test:debug": "npm run build:test-container && docker run --rm -it -v $(pwd):/work -w /work -e DEBUG=true test-container ./test/test.sh"
+    "test": "npm run build:test-container && docker run --rm -t -v $(pwd):/work -w /work test-container ./test/test.sh",
+    "test:debug": "npm run build:test-container && docker run --rm -t -v $(pwd):/work -w /work -e DEBUG=true test-container ./test/test.sh"
   },
   "main": "src/index.js",
   "bin": "src/index.js",
