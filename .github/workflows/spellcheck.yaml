@@ -17,4 +17,4 @@ jobs:
           npm ci
       - name: Check Format
         run: |
-          npm run lint:format
+          npm run check:format
