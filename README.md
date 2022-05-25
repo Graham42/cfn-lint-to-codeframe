@@ -7,7 +7,7 @@ Example:
 
 [cfn-lint]: https://github.com/aws-cloudformation/cfn-python-lint
 
-![An example of the CLI output](https://github.com/Graham42/cfn-lint-to-codeframe/blob/main/error-ouput.jpg?raw=true)
+![An example of the CLI output](https://github.com/Graham42/cfn-lint-to-codeframe/blob/main/error-output.jpg?raw=true)
 
 ## Installation
 

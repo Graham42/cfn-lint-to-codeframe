@@ -1,4 +1,8 @@
 {
-  "version": "0.1",
-  "allowCompoundWords": true
+  "version": "0.2",
+  "allowCompoundWords": true,
+  "words": [
+    //
+    "McGregor"
+  ]
 }

@@ -1,4 +1,4 @@
-name: Continuos Integration
+name: Continuous Integration
 on: # rebuild any PRs and main branch changes
   pull_request:
 
@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: streetsidesoftware/cspell-action@v1.0.1
+      - uses: streetsidesoftware/cspell-action@v1.6.2
   lint-format: # run the action
     runs-on: ubuntu-latest
     steps:
@@ -18,3 +18,16 @@ jobs:
       - name: Check Format
         run: |
           npm run check:format
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          npm ci
+      - name: Prep container
+        run: |
+          npm run build:test-container
+      - name: Test
+        run: |
+          npm run test
