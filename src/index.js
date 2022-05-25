@@ -58,7 +58,7 @@ async function main() {
     const result = codeFrameColumns(contents, location, {
       highlightCode: true,
     });
-    console.log(chalk.bgGray(err.fileName));
+    console.log(chalk.gray(err.fileName));
     console.log("  " + chalk.red.bold(err.message));
     if (err.fileName.endsWith(".json")) {
       let path = getJsonPathFromRawLocation(contents, err.start);
